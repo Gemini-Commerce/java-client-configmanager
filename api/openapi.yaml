@@ -1,0 +1,200 @@
+openapi: 3.0.1
+info:
+  title: configmanager/service.proto
+  version: version not set
+servers:
+- url: /
+tags:
+- name: ConfigManager
+paths:
+  /configmanager.ConfigManager/BulkSetConfigs:
+    post:
+      operationId: ConfigManager_BulkSetConfigs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/configmanagerBulkSetConfigsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/configmanagerBulkSetConfigsResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ConfigManager
+      x-codegen-request-body-name: body
+      x-content-type: application/json
+      x-accepts: application/json
+  /configmanager.ConfigManager/GetConfig:
+    post:
+      operationId: ConfigManager_GetConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/configmanagerGetConfigRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/configmanagerConfigResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ConfigManager
+      x-codegen-request-body-name: body
+      x-content-type: application/json
+      x-accepts: application/json
+  /configmanager.ConfigManager/GetTenantIdByCode:
+    post:
+      operationId: ConfigManager_GetTenantIdByCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/configmanagerGetTenantIdByCodeRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/configmanagerGetTenantIdByCodeResponse'
+          description: A successful response.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ConfigManager
+      x-codegen-request-body-name: body
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    BulkSetConfigsRequestConfig:
+      properties:
+        key:
+          title: The key of the config to set
+          type: string
+        value:
+          title: The value of the config to set
+          type: string
+        businessDomain:
+          title: The owner business domain of the config
+          type: string
+      required:
+      - key
+      - value
+      type: object
+    configmanagerBulkSetConfigsRequest:
+      properties:
+        tenantId:
+          type: string
+        configs:
+          items:
+            $ref: '#/components/schemas/BulkSetConfigsRequestConfig'
+          type: array
+      required:
+      - configs
+      - tenantId
+      type: object
+    configmanagerBulkSetConfigsResponse:
+      type: object
+    configmanagerConfigResponse:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        value: value
+        updatedAt: 2000-01-23T04:56:07.000+00:00
+      properties:
+        value:
+          title: The config value
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+        updatedAt:
+          format: date-time
+          type: string
+      type: object
+    configmanagerGetConfigRequest:
+      properties:
+        tenantId:
+          title: The tenant id of the config to get
+          type: string
+        key:
+          title: The key of the config to get
+          type: string
+        businessDomain:
+          title: The business domain of the config to get
+          type: string
+      required:
+      - key
+      - tenantId
+      type: object
+    configmanagerGetTenantIdByCodeRequest:
+      properties:
+        code:
+          title: The tenant id of the config to get
+          type: string
+      required:
+      - code
+      type: object
+    configmanagerGetTenantIdByCodeResponse:
+      example:
+        tenantId: tenantId
+      properties:
+        tenantId:
+          title: The tenant id of the config to get
+          type: string
+      required:
+      - tenantId
+      type: object
+    protobufAny:
+      additionalProperties:
+        type: object
+      properties:
+        '@type':
+          type: string
+      type: object
+    rpcStatus:
+      properties:
+        code:
+          format: int32
+          type: integer
+        message:
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/protobufAny'
+          type: array
+      type: object
+  securitySchemes:
+    geminiAuthorization:
+      in: header
+      name: X-Gem-Token
+      type: apiKey
+    standardAuthorization:
+      in: header
+      name: Authorization
+      type: apiKey
+x-original-swagger-version: "2.0"
+
