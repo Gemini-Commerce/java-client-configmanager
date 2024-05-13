@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    name: Build configmanager/service.proto
+    name: Build Config Manager Service
     runs-on: ubuntu-latest
     strategy:
       matrix:

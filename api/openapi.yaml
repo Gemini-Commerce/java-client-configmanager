@@ -1,14 +1,23 @@
 openapi: 3.0.1
 info:
-  title: configmanager/service.proto
-  version: version not set
+  contact:
+    email: info@gemini-commerce.com
+    name: Gemini Team
+  license:
+    name: Gemini fair use license
+    url: https://gemini-commerce.com/api/fair-use-license
+  title: Config Manager Service
+  version: 1.0.0
 servers:
-- url: /
+- url: https://config-manager.api.gogemini.io/
+security:
+- Authorization: []
 tags:
 - name: ConfigManager
 paths:
   /configmanager.ConfigManager/BulkSetConfigs:
     post:
+      description: Bulk set configs
       operationId: ConfigManager_BulkSetConfigs
       requestBody:
         content:
@@ -29,6 +38,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: BulkSetConfigs
       tags:
       - ConfigManager
       x-codegen-request-body-name: body
@@ -36,6 +48,7 @@ paths:
       x-accepts: application/json
   /configmanager.ConfigManager/GetConfig:
     post:
+      description: Get a config
       operationId: ConfigManager_GetConfig
       requestBody:
         content:
@@ -56,6 +69,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/rpcStatus'
           description: An unexpected error response.
+      security:
+      - standardAuthorization: []
+      summary: GetConfig
       tags:
       - ConfigManager
       x-codegen-request-body-name: body
@@ -188,13 +204,14 @@ components:
           type: array
       type: object
   securitySchemes:
-    geminiAuthorization:
-      in: header
-      name: X-Gem-Token
-      type: apiKey
-    standardAuthorization:
+    Authorization:
       in: header
       name: Authorization
       type: apiKey
+    standardAuthorization:
+      flows:
+        implicit:
+          scopes: {}
+      type: oauth2
 x-original-swagger-version: "2.0"
 

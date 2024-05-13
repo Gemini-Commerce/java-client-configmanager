@@ -5,7 +5,7 @@
     <artifactId>openapi-java-client</artifactId>
     <packaging>jar</packaging>
     <name>openapi-java-client</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
@@ -17,7 +17,7 @@
     <licenses>
         <license>
             <name>AGPL-3.0</name>
-            <url>http://unlicense.org</url>
+            <url>https://gemini-commerce.com/api/fair-use-license</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -283,6 +283,11 @@
             <groupId>io.gsonfire</groupId>
             <artifactId>gson-fire</artifactId>
             <version>${gson-fire-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.oltu.oauth2</groupId>
+            <artifactId>org.apache.oltu.oauth2.client</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

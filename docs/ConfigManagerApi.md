@@ -1,11 +1,11 @@
 # ConfigManagerApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://config-manager.api.gogemini.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**configManagerBulkSetConfigs**](ConfigManagerApi.md#configManagerBulkSetConfigs) | **POST** /configmanager.ConfigManager/BulkSetConfigs |  |
-| [**configManagerGetConfig**](ConfigManagerApi.md#configManagerGetConfig) | **POST** /configmanager.ConfigManager/GetConfig |  |
+| [**configManagerBulkSetConfigs**](ConfigManagerApi.md#configManagerBulkSetConfigs) | **POST** /configmanager.ConfigManager/BulkSetConfigs | BulkSetConfigs |
+| [**configManagerGetConfig**](ConfigManagerApi.md#configManagerGetConfig) | **POST** /configmanager.ConfigManager/GetConfig | GetConfig |
 | [**configManagerGetTenantIdByCode**](ConfigManagerApi.md#configManagerGetTenantIdByCode) | **POST** /configmanager.ConfigManager/GetTenantIdByCode |  |
 
 
@@ -13,7 +13,9 @@ All URIs are relative to *http://localhost*
 # **configManagerBulkSetConfigs**
 > Object configManagerBulkSetConfigs(body)
 
+BulkSetConfigs
 
+Bulk set configs
 
 ### Example
 ```java
@@ -21,13 +23,18 @@ All URIs are relative to *http://localhost*
 import GeminiCommerce_Configmanager.ApiClient;
 import GeminiCommerce_Configmanager.ApiException;
 import GeminiCommerce_Configmanager.Configuration;
+import GeminiCommerce_Configmanager.auth.*;
 import GeminiCommerce_Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("https://config-manager.api.gogemini.io");
+    
+    // Configure OAuth2 access token for authorization: standardAuthorization
+    OAuth standardAuthorization = (OAuth) defaultClient.getAuthentication("standardAuthorization");
+    standardAuthorization.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigManagerApi apiInstance = new ConfigManagerApi(defaultClient);
     ConfigmanagerBulkSetConfigsRequest body = new ConfigmanagerBulkSetConfigsRequest(); // ConfigmanagerBulkSetConfigsRequest | 
@@ -57,7 +64,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[standardAuthorization](../README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -74,7 +81,9 @@ No authorization required
 # **configManagerGetConfig**
 > ConfigmanagerConfigResponse configManagerGetConfig(body)
 
+GetConfig
 
+Get a config
 
 ### Example
 ```java
@@ -82,13 +91,18 @@ No authorization required
 import GeminiCommerce_Configmanager.ApiClient;
 import GeminiCommerce_Configmanager.ApiException;
 import GeminiCommerce_Configmanager.Configuration;
+import GeminiCommerce_Configmanager.auth.*;
 import GeminiCommerce_Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("https://config-manager.api.gogemini.io");
+    
+    // Configure OAuth2 access token for authorization: standardAuthorization
+    OAuth standardAuthorization = (OAuth) defaultClient.getAuthentication("standardAuthorization");
+    standardAuthorization.setAccessToken("YOUR ACCESS TOKEN");
 
     ConfigManagerApi apiInstance = new ConfigManagerApi(defaultClient);
     ConfigmanagerGetConfigRequest body = new ConfigmanagerGetConfigRequest(); // ConfigmanagerGetConfigRequest | 
@@ -118,7 +132,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[standardAuthorization](../README.md#standardAuthorization)
 
 ### HTTP request headers
 
@@ -143,13 +157,20 @@ No authorization required
 import GeminiCommerce_Configmanager.ApiClient;
 import GeminiCommerce_Configmanager.ApiException;
 import GeminiCommerce_Configmanager.Configuration;
+import GeminiCommerce_Configmanager.auth.*;
 import GeminiCommerce_Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost");
+    defaultClient.setBasePath("https://config-manager.api.gogemini.io");
+    
+    // Configure API key authorization: Authorization
+    ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+    Authorization.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Authorization.setApiKeyPrefix("Token");
 
     ConfigManagerApi apiInstance = new ConfigManagerApi(defaultClient);
     ConfigmanagerGetTenantIdByCodeRequest body = new ConfigmanagerGetTenantIdByCodeRequest(); // ConfigmanagerGetTenantIdByCodeRequest | 
@@ -179,7 +200,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
