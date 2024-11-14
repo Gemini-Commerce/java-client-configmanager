@@ -37,19 +37,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import GeminiCommerce_Configmanager.JSON;
+import GeminiCommerce.Configmanager.JSON;
 
 /**
  * ProtobufAny
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-13T11:00:21.069888808Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-14T11:55:13.303789368Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ProtobufAny {
   public static final String SERIALIZED_NAME_AT_TYPE = "@type";
   @SerializedName(SERIALIZED_NAME_AT_TYPE)
@@ -63,10 +62,10 @@ public class ProtobufAny {
     return this;
   }
 
-   /**
+  /**
    * Get atType
    * @return atType
-  **/
+   */
   @javax.annotation.Nullable
   public String getAtType() {
     return atType;
@@ -174,12 +173,12 @@ public class ProtobufAny {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ProtobufAny
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ProtobufAny
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProtobufAny.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -220,7 +219,12 @@ public class ProtobufAny {
                  else if (entry.getValue() instanceof Character)
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
-                   obj.add(entry.getKey(), gson.toJsonTree(entry.getValue()).getAsJsonObject());
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
                  }
                }
              }
@@ -259,22 +263,22 @@ public class ProtobufAny {
     }
   }
 
- /**
-  * Create an instance of ProtobufAny given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ProtobufAny
-  * @throws IOException if the JSON string is invalid with respect to ProtobufAny
-  */
+  /**
+   * Create an instance of ProtobufAny given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ProtobufAny
+   * @throws IOException if the JSON string is invalid with respect to ProtobufAny
+   */
   public static ProtobufAny fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ProtobufAny.class);
   }
 
- /**
-  * Convert an instance of ProtobufAny to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ProtobufAny to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

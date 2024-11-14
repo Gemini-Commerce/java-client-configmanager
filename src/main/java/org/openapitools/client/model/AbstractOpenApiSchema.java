@@ -13,7 +13,7 @@
 
 package org.openapitools.client.model;
 
-import GeminiCommerce_Configmanager.ApiException;
+import GeminiCommerce.Configmanager.ApiException;
 import java.util.Objects;
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Abstract class for oneOf,anyOf schemas defined in OpenAPI spec
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-13T11:00:21.069888808Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-14T11:55:13.303789368Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public abstract class AbstractOpenApiSchema {
 
     // store the actual instance of the schema/object

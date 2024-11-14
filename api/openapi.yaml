@@ -45,7 +45,8 @@ paths:
       - ConfigManager
       x-codegen-request-body-name: body
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /configmanager.ConfigManager/GetConfig:
     post:
       description: Get a config
@@ -76,7 +77,8 @@ paths:
       - ConfigManager
       x-codegen-request-body-name: body
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /configmanager.ConfigManager/GetTenantIdByCode:
     post:
       operationId: ConfigManager_GetTenantIdByCode
@@ -103,7 +105,8 @@ paths:
       - ConfigManager
       x-codegen-request-body-name: body
       x-content-type: application/json
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
   schemas:
     BulkSetConfigsRequestConfig:
@@ -187,11 +190,19 @@ components:
     protobufAny:
       additionalProperties:
         type: object
+      example:
+        '@type': '@type'
       properties:
         '@type':
           type: string
       type: object
     rpcStatus:
+      example:
+        code: 0
+        details:
+        - '@type': '@type'
+        - '@type': '@type'
+        message: message
       properties:
         code:
           format: int32

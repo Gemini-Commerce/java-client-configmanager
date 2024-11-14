@@ -20,11 +20,11 @@ Bulk set configs
 ### Example
 ```java
 // Import classes:
-import GeminiCommerce_Configmanager.ApiClient;
-import GeminiCommerce_Configmanager.ApiException;
-import GeminiCommerce_Configmanager.Configuration;
-import GeminiCommerce_Configmanager.auth.*;
-import GeminiCommerce_Configmanager.models.*;
+import GeminiCommerce.Configmanager.ApiClient;
+import GeminiCommerce.Configmanager.ApiException;
+import GeminiCommerce.Configmanager.Configuration;
+import GeminiCommerce.Configmanager.auth.*;
+import GeminiCommerce.Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
@@ -88,11 +88,11 @@ Get a config
 ### Example
 ```java
 // Import classes:
-import GeminiCommerce_Configmanager.ApiClient;
-import GeminiCommerce_Configmanager.ApiException;
-import GeminiCommerce_Configmanager.Configuration;
-import GeminiCommerce_Configmanager.auth.*;
-import GeminiCommerce_Configmanager.models.*;
+import GeminiCommerce.Configmanager.ApiClient;
+import GeminiCommerce.Configmanager.ApiException;
+import GeminiCommerce.Configmanager.Configuration;
+import GeminiCommerce.Configmanager.auth.*;
+import GeminiCommerce.Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
@@ -154,11 +154,11 @@ public class Example {
 ### Example
 ```java
 // Import classes:
-import GeminiCommerce_Configmanager.ApiClient;
-import GeminiCommerce_Configmanager.ApiException;
-import GeminiCommerce_Configmanager.Configuration;
-import GeminiCommerce_Configmanager.auth.*;
-import GeminiCommerce_Configmanager.models.*;
+import GeminiCommerce.Configmanager.ApiClient;
+import GeminiCommerce.Configmanager.ApiException;
+import GeminiCommerce.Configmanager.Configuration;
+import GeminiCommerce.Configmanager.auth.*;
+import GeminiCommerce.Configmanager.models.*;
 import org.openapitools.client.api.ConfigManagerApi;
 
 public class Example {
