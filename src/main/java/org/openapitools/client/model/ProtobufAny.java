@@ -48,7 +48,7 @@ import GeminiCommerce.Configmanager.JSON;
 /**
  * ProtobufAny
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-14T11:55:13.303789368Z[Etc/UTC]", comments = "Generator version: 7.9.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-15T16:38:06.723611331Z[Etc/UTC]", comments = "Generator version: 7.9.0")
 public class ProtobufAny {
   public static final String SERIALIZED_NAME_AT_TYPE = "@type";
   @SerializedName(SERIALIZED_NAME_AT_TYPE)
